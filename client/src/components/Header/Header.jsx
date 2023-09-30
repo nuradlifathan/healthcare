@@ -1,6 +1,9 @@
 import { useEffect, useRef } from "react";
 import logo from "../../assets/images/logo.png";
+import userImage from "../../assets/images/avatar-icon.png";
 import { NavLink, Link } from "react-router-dom";
+import { BiMenu } from "react-icons/bi";
+
 const navLinks = [
   {
     path: "/home",
@@ -47,6 +50,27 @@ const Header = () => {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Navigation Right */}
+          <div className="flex items-center gap-4">
+            <div>
+              <Link to="/">
+                <figure className="w-[35px] h-[35px] rounded-full cursor-pointer">
+                  <img src={userImage} className="w-full rounded-full" alt="" />
+                </figure>
+              </Link>
+            </div>
+
+            <Link to="/login">
+              <button className="bg-primaryColor py-2 px-6 text-white font-[600] h-[44px] flex item-center justify-center rounded-[50px]">
+                Login
+              </button>
+            </Link>
+
+            <span className="md:hidden">
+              <BiMenu className="w-6 h-6 cursor-pointer" />
+            </span>
           </div>
         </div>
       </div>
